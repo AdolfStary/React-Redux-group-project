@@ -47,9 +47,9 @@ ReactDOM.render(
     <> 
         <Provider store={store}>
 
-              
-
+    
               <Router>
+                
                   <Header/>
                   <main>
                     <Route path="/" exact> <SignIn /> </Route>
