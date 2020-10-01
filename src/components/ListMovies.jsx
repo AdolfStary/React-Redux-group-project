@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 
 const ListMovies = ( props ) => {
 
+    // const searchTermConst = props.searchTerm.trim() || "";
     // If result is being filtered by searched term then show filtered list of movies, otherwise list all movies
     if (props.searchTerm !== "" || props.searchTerm !== undefined){
 
         return (
-
             <>
             <ul>
                 {props.listMovies.map(  ( movie ) => {
@@ -22,19 +22,14 @@ const ListMovies = ( props ) => {
                 } ) }
             </ul>
             </>
-
         );     
 
     }
     else 
         return (
-
-            <>
             <ul>
-            {props.listMovies.map(  ( movie ) => <li key={movie.id}><MovieCard movieId={movie.id} /></li> ) }
+                {props.listMovies.map(  ( movie ) => <li key={movie.id}><MovieCard movieId={movie.id} /></li> ) }
             </ul>
-            </>
-
         );
 }
 export default connect( state => ( { listMovies: state.movies } ) ) ( ListMovies );
